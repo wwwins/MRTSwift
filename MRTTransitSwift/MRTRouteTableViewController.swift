@@ -29,13 +29,13 @@ class MRTRouteTableViewController :UITableViewController {
 			cell = UITableViewCell(style: .Value1, reuseIdentifier: "Cell")
 		}
 		if let cell = cell {
-			cell.textLabel.textColor = UIColor.blackColor()
-			cell.textLabel.textAlignment = .Left
+			cell.textLabel?.textColor = UIColor.blackColor()
+			cell.textLabel?.textAlignment = .Left
 			cell.selectionStyle = .None
 			if let route = self.route {
 				let routeSection = route.transitions[indexPath.section]
 				let (lineID, from, to) = routeSection[indexPath.row]
-				cell.textLabel.text = "\(from.name) - \(to.name)"
+				cell.textLabel?.text = "\(from.name) - \(to.name)"
 				cell.detailTextLabel!.text = MRTLineName(lineID)
 			}
 		}
